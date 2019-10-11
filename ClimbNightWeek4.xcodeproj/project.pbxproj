@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26243199234FF8A4000F80BA /* MVDJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 26243198234FF8A4000F80BA /* MVDJoke.m */; };
+		2624319C234FFE11000F80BA /* MVDJokeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2624319B234FFE11000F80BA /* MVDJokeController.m */; };
+		2624319F23501401000F80BA /* MVDJokeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2624319E23501401000F80BA /* MVDJokeTableViewCell.swift */; };
 		8685D705234F95BE008BEC37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8685D704234F95BE008BEC37 /* AppDelegate.m */; };
 		8685D708234F95BE008BEC37 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8685D707234F95BE008BEC37 /* SceneDelegate.m */; };
 		8685D70E234F95BE008BEC37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8685D70C234F95BE008BEC37 /* Main.storyboard */; };
@@ -17,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26243197234FF8A4000F80BA /* MVDJoke.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVDJoke.h; sourceTree = "<group>"; };
+		26243198234FF8A4000F80BA /* MVDJoke.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVDJoke.m; sourceTree = "<group>"; };
+		2624319A234FFE11000F80BA /* MVDJokeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVDJokeController.h; sourceTree = "<group>"; };
+		2624319B234FFE11000F80BA /* MVDJokeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVDJokeController.m; sourceTree = "<group>"; };
+		2624319E23501401000F80BA /* MVDJokeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVDJokeTableViewCell.swift; sourceTree = "<group>"; };
 		8685D700234F95BE008BEC37 /* ClimbNightWeek4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimbNightWeek4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8685D703234F95BE008BEC37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8685D704234F95BE008BEC37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +50,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26243195234FF7CA000F80BA /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2624319A234FFE11000F80BA /* MVDJokeController.h */,
+				2624319B234FFE11000F80BA /* MVDJokeController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		26243196234FF7E2000F80BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26243197234FF8A4000F80BA /* MVDJoke.h */,
+				26243198234FF8A4000F80BA /* MVDJoke.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2624319D235013D3000F80BA /* Custome Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2624319E23501401000F80BA /* MVDJokeTableViewCell.swift */,
+			);
+			path = "Custome Cell";
+			sourceTree = "<group>";
+		};
 		8685D6F7234F95BE008BEC37 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +95,8 @@
 		8685D702234F95BE008BEC37 /* ClimbNightWeek4 */ = {
 			isa = PBXGroup;
 			children = (
+				26243196234FF7E2000F80BA /* Model */,
+				26243195234FF7CA000F80BA /* Model Controller */,
 				8685D71E234F960F008BEC37 /* View Controllers */,
 				8685D71D234F95DF008BEC37 /* Storyboards */,
 				8685D71C234F95CB008BEC37 /* Resources */,
@@ -95,6 +131,7 @@
 		8685D71E234F960F008BEC37 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2624319D235013D3000F80BA /* Custome Cell */,
 				8685D720234F9629008BEC37 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
@@ -126,6 +163,7 @@
 		8685D6F8234F95BE008BEC37 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MVD;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Jax Tubbs";
 				TargetAttributes = {
@@ -171,9 +209,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2624319F23501401000F80BA /* MVDJokeTableViewCell.swift in Sources */,
+				26243199234FF8A4000F80BA /* MVDJoke.m in Sources */,
 				8685D705234F95BE008BEC37 /* AppDelegate.m in Sources */,
 				8685D716234F95BF008BEC37 /* main.m in Sources */,
 				8685D708234F95BE008BEC37 /* SceneDelegate.m in Sources */,
+				2624319C234FFE11000F80BA /* MVDJokeController.m in Sources */,
 				8685D721234F9629008BEC37 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

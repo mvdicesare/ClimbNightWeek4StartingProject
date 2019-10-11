@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,6 +42,9 @@
                                                 <rect key="frame" x="62.5" y="0.0" width="270.5" height="31"/>
                                                 <color key="minimumTrackTintColor" name="Main"/>
                                                 <color key="thumbTintColor" name="Main"/>
+                                                <connections>
+                                                    <action selector="numberOfJokesSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="bST-tX-X0n"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -54,6 +57,9 @@
                                         <state key="normal" title="Get Jokes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="getJokeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alh-hF-VSP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -61,13 +67,42 @@
                                 <rect key="frame" x="0.0" y="289" width="414" height="607"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="142" id="Xfz-Zc-pgv">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="142"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jokeCell" rowHeight="189" id="Xfz-Zc-pgv" customClass="MVDJokeTableViewCell" customModule="ClimbNightWeek4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="189"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xfz-Zc-pgv" id="ggh-73-nh8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="189"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LHG-u7-6K2">
+                                                    <rect key="frame" x="24" y="15" width="366" height="159"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joke" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pr-yG-tRe">
+                                                            <rect key="frame" x="0.0" y="0.0" width="366" height="71.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Category)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olb-54-xgU">
+                                                            <rect key="frame" x="0.0" y="87.5" width="366" height="71.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LHG-u7-6K2" firstAttribute="top" secondItem="ggh-73-nh8" secondAttribute="topMargin" constant="4" id="4Ha-ON-qbL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LHG-u7-6K2" secondAttribute="trailing" constant="4" id="Bxt-Yl-13A"/>
+                                                <constraint firstItem="LHG-u7-6K2" firstAttribute="leading" secondItem="ggh-73-nh8" secondAttribute="leadingMargin" constant="4" id="Iel-Zc-Mxs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LHG-u7-6K2" secondAttribute="bottom" constant="4" id="WBe-au-JP9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="catagoryLabel" destination="olb-54-xgU" id="XNl-3x-ygl"/>
+                                            <outlet property="jokeLabel" destination="4pr-yG-tRe" id="XJk-Rx-pra"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -87,6 +122,7 @@
                     <connections>
                         <outlet property="firstNameTextField" destination="ZcX-T7-DGM" id="PQG-e7-eXS"/>
                         <outlet property="getJokesButton" destination="JQc-XJ-n8I" id="Vxh-12-49T"/>
+                        <outlet property="jokesTableView" destination="6WJ-4Q-RLb" id="YkV-N2-0rl"/>
                         <outlet property="lastNameTextField" destination="bkL-3M-InP" id="Ze3-XU-Xv0"/>
                         <outlet property="numberOfJokesLabel" destination="21Q-1G-ed8" id="Wof-qP-UZh"/>
                         <outlet property="numberOfJokesSlider" destination="kmI-DC-OUy" id="juo-u4-7MN"/>
